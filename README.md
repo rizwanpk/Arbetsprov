@@ -6,11 +6,13 @@ Getting started
 4. Go to http://localhost:3000
 
 About Assignment
+
 I have used the following technologies
-Node.js, Express and the template engine "jade" with SASS , jQuery and Grunt.
-Free Geolocation API from Google Maps.
-Typeahead.js script for the autocomplete functionality.
-Moment.js script for the current local time.
+
+* Node.js, Express and the template engine "jade" with SASS , jQuery and Grunt.
+* Free Geolocation API from Google Maps.
+* Typeahead.js script for the autocomplete functionality.
+* Moment.js script for the current local time.
 
 In the search field you can search states of US. And when you will press on the state name state name will be displayed otherwise error will occur.
 
