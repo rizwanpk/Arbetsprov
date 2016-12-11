@@ -14,17 +14,6 @@ I have used the following technologies
 * Typeahead.js script for the autocomplete functionality.
 * Moment.js script for the current local time.
 
-Instructions
-* Fork the repository
-* Create a Feature Branch
-* Implement a simple search function according to wireframes and UI (attached on github)
-* The search should use a public REST API of your choice using JavaScript
-* Search for title, return title (or something like that)
-* Display partial search results in a list beneath the search field
-* When hitting [ENTER] the selected search value should be saved with date/timestamp beneath the search box (as a search history)
-* The page should be responsive, so that if width of window is changed it should adapt
-* Nothing needs to be saved if the page is reloaded (i.e don’t have to use cookies/database etc)
-
 In the search field you can search states of US. And when you will press on the state name state name will be displayed otherwise error will occur.
 
 Instructions
