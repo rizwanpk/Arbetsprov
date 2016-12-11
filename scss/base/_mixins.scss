@@ -1,0 +1,47 @@
+$base-font-size: 16;
+$base-line-height: 22px;
+
+// Font-size & line-height
+@mixin font-size($font-size, $line-height: 'no-line-height') {
+  font-size: $font-size + px;
+  font-size: ($font-size / $base-font-size) * 1rem;
+  @if $line-height != 'no-line-height' {
+    line-height: $line-height;
+  }
+}
+
+// Breakpoints
+$breakpoints: (
+  'm':  ( min-width:  650px ),
+  'l':  ( min-width: 1000px ),
+  'xl': ( min-width: 1400px )
+) !default;
+
+// Mixin to manage responsive breakpoints
+// @author Hugo Giraudel
+// @param {String} $breakpoint - Breakpoint name
+// @require $breakpoints
+@mixin media($breakpoint) {
+  // If the key exists in the map
+  @if map-has-key($breakpoints, $breakpoint) {
+    // Prints a media query based on the value
+    @media #{inspect(map-get($breakpoints, $breakpoint))} {
+      @content;
+    }
+  } @else {
+    // If the key doesn't exist in the map
+    @warn "Unfortunately, no value could be retrieved from `#{$breakpoint}`. "
+        + "Available breakpoints are: #{map-keys($breakpoints)}.";
+  }
+}
+
+// Linear gradient
+@mixin gradient($top, $bottom, $fallback: $bottom) {
+  background: $fallback;
+  background: -moz-linear-gradient(top, $top 0%, $bottom 100%);
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,$top), color-stop(100%,$bottom));
+  background: -webkit-linear-gradient(top, $top 0%, $bottom 100%);
+  background: -o-linear-gradient(top, $top 0%, $bottom 100%);
+  background: -ms-linear-gradient(top, $top 0%, $bottom 100%);
+  background: linear-gradient(to bottom, $top 0%, $bottom 100%); /* W3C */
+}

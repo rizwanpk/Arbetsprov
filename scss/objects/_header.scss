@@ -1,0 +1,23 @@
+$normal-logo-width: 139px;
+$normal-logo-height: 35px;
+$big-logo-width: 277px;
+$big-logo-height: 70px;
+
+.site-header {
+
+  .logo {
+    background: url(/images/logo.svg) 0 0 no-repeat;
+    background-size: $normal-logo-width $normal-logo-height;
+    height: $normal-logo-height;
+    margin: 40px auto 50px;
+    overflow: hidden;
+    text-indent: -9999px;
+    width: $normal-logo-width;
+
+    @include media(m) {
+      background-size: $big-logo-width $big-logo-height;
+      height: $big-logo-height;
+      width: $big-logo-width;
+    }
+  }
+}

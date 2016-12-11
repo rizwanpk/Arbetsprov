@@ -1,0 +1,41 @@
+html, body {
+  font-size: 100%;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+      -ms-text-size-adjust: 100%;
+  font-kerning: normal;                 // Set the default for kerning
+  font-synthesis: none;                 // Don't allow the font to create sythetic bold/italic
+  text-rendering: optimizeLegibility;   // Improve kerning pairs. Caution: Webkit gets funny with this sometimes
+   -webkit-font-smoothing: antialiased; // Improve (or in some cases screw with) safari's legibility somewhat
+  -moz-osx-font-smoothing: grayscale;   // Improve firefox's legibility somewhat
+}
+
+body {
+  line-height: 1;
+  margin: 0;
+}
+
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+h1, h2, h3, h4, h5, h6,
+.h1, .h2, .h3, .h4, .h5, .h6 {
+  -webkit-font-feature-settings: "liga" 1, "dlig" 1;
+     -moz-font-feature-settings: "liga" 1, "dlig" 1;
+      -ms-font-feature-settings: "liga" 1, "dlig" 1;
+       -o-font-feature-settings: "liga" 1, "dlig" 1;
+          font-feature-settings: "liga" 1, "dlig" 1;
+}
+
+img,
+svg {
+  vertical-align: middle;
+}

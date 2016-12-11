@@ -1,0 +1,22 @@
+// Correct calc of the border box
+*, *:before, *:after {
+  box-sizing: border-box;
+}
+
+html {
+  @include gradient($main-dark, $main-light, $main-dark);
+  color: $font-color;
+  font-family: sans-serif;;
+  @include font-size($base-font-size, $base-line-height);
+}
+
+html, body {
+  min-height: 100%;
+}
+
+.page-wrap {
+  margin: 0 auto;
+  max-width: 800px;
+  padding: 20px;
+  width: 100%;
+}

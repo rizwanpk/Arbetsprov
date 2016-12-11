@@ -1,0 +1,91 @@
+.search-container {
+  position: relative;
+
+  input {
+    background: $input-bg-color;
+    border: 0;
+    border-radius: 5px;
+    color: $font-color;
+    @include font-size(20, 28px);
+    padding: 10px 0 10px 40px;
+    width: 100%;
+    -webkit-appearance: none;
+
+    @include media(m) {
+      border-radius: 8px;
+      @include font-size(26, 38px);
+      padding: 15px 0 15px 80px;
+    }
+
+    &:focus {
+      background-color: rgba(#fff, .08) !important;
+    }
+
+    &.tt-hint {
+      color: $input-font-color;
+    }
+
+    &::-webkit-input-placeholder { color: $input-font-color; }
+    &:-moz-placeholder           { color: $input-font-color; }
+    &::-moz-placeholder          { color: $input-font-color; }
+    &:-ms-input-placeholder      { color: $input-font-color; }
+  }
+
+  label {
+    background: url(/images/search.svg) 0 0 no-repeat;
+    background-size: 20px 20px;
+    cursor: text;
+    height: 20px;
+    left: 15px;
+    margin-top: -10px;
+    position: absolute;
+    top: 50%;
+    width: 20px;
+    z-index: 1;
+
+    @include media(m) {
+      background-size: 30px 30px;
+      height: 30px;
+      left: 25px;
+      margin-top: -15px;
+      width: 30px;
+    }
+  }
+}
+
+.twitter-typeahead {
+  width: 100%;
+}
+
+.tt-menu {
+  background: $input-bg-color;
+  border-radius: 5px;
+  color: $input-font-color;
+  margin-top: 3px;
+  overflow: hidden;
+  width: 100%;
+
+  @include media(m) {
+    border-radius: 8px;
+  }
+
+  .tt-suggestion {
+    color: $font-color;
+    padding: 10px 10px 10px 45px;
+
+    @include media(m) {
+      @include font-size(20, 26px);
+      padding-left: 80px;
+    }
+
+    & + .tt-suggestion {
+      border-top: 1px solid rgba(#fff, .4);
+    }
+
+    &:hover,
+    &.tt-cursor {
+      background: rgba(#fff, .2);
+      cursor: pointer;
+    }
+  }
+}

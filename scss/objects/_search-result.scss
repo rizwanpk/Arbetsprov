@@ -1,0 +1,121 @@
+.search-results {
+  background: rgba(#fff, .2);
+  margin: 20px -20px 0;
+  padding: 0 10px;
+
+  @include media(m) {
+    margin-top: 60px;
+    padding: 0 20px;
+  }
+
+  ul {
+    list-style: none;
+    margin: 0;
+    padding: 10px 0;
+  }
+
+  .item {
+    border-radius: 4px;
+    display: table;
+    margin: 0 -20px;
+    overflow: hidden;
+    padding: 10px 30px;
+    position: relative;
+    width: calc(100% + 40px);
+
+    @include media(m) {
+      margin: 0;
+      margin-bottom: 2px;
+      padding: 10px;
+      width: 100%;
+    }
+
+    &.error {
+      padding-bottom: 20px;
+      padding-top: 20px;
+    }
+
+    .location,
+    .date,
+    .remove {
+      display: table-cell;
+      vertical-align: middle;
+    }
+
+    .location {
+      .city {
+        @include font-size(20, 26px);
+        font-weight: 700;
+      }
+
+      .sub-info {
+        font-style: italic;
+        line-height: $base-line-height - 3px;
+      }
+    }
+
+    .date {
+      width: 175px;
+
+      @include media(m) {
+        width: 190px;
+      }
+    }
+
+    $remove-size: 24px;
+    .remove {
+      background: rgba(#f00, .5);
+      height: 100%;
+      position: absolute;
+      right: 10px;
+      top: 0;
+      width: 55px;
+
+      @include media(m) {
+        right: 0;
+        width: 60px;
+      }
+
+      .no-touchevents & {
+        opacity: 0;
+      }
+
+      &:after {
+        background: rgba(#fff, .85);
+        border-radius: 50%;
+        box-shadow: 0 0 4px rgba(#000, .3);
+        color: #979797;
+        content: "x";
+        height: $remove-size;
+        left: 50%;
+        line-height: 23px;
+        margin: (-($remove-size / 2)) 0 0 (-($remove-size / 2));
+        position: absolute;
+        text-align: center;
+        top: 50%;
+        width: $remove-size;
+      }
+    }
+
+    &:hover {
+      background: rgba(#fff, .2);
+
+      .remove {
+        .no-touchevents & {
+          opacity: 1;
+          width: 100%;
+        }
+      }
+    }
+    .remove:hover {
+      background: rgba(#f00, .5);
+      opacity: 1;
+      width: 100%;
+      -webkit-transition: width 2s; /* Safari */
+      transition: width 2s;
+      &:after {
+        left: 97%;
+      }
+    }
+  }
+}
